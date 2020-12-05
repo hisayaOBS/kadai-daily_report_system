@@ -16,13 +16,13 @@ import javax.persistence.Table;
 @Table(name = "employees") // テーブル名employees(複数形)作成
 @NamedQueries({ //このSQLはモデルへのアクセス(表名が単数形になっているのはモデル名だから)
         //全レコード抽出
-        @NamedQuery(name = "getAllEmployees", query = "select e from employee as e order by e.id desc"),
+        @NamedQuery(name = "getAllEmployees", query = "select e from Employee as e order by e.id desc"),
         //全レコード数抽出
-        @NamedQuery(name = "getEmployeesCount", query = "select count(e) from employee as e"),
+        @NamedQuery(name = "getEmployeesCount", query = "select count(e) from Employee as e"),
         //社員番号が既に登録済みかどうかチェック(:codeはプレースホルダーなので、後で他の文字列にい置き換わる)
-        @NamedQuery(name = "checkRegisteredCode", query = "select count(e) from employee as e where e.code = :code"),
+        @NamedQuery(name = "checkRegisteredCode", query = "select count(e) from Employee as e where e.code = :code"),
         //ログインチェック(現役の従業員&社員番号・パスワードの入力が正しいか?
-        @NamedQuery(name = "checkLoginCodeAndPasword", query = "select e from as e where e.delete_flg = 0 and code = :code and password = :pass")
+        @NamedQuery(name = "checkLoginCodeAndPassword", query = "select e from Employee as e where e.delete_flag = 0 and e.code = :code and e.password = :pass")
 })
 @Entity //実態(テーブル及びカラムを列挙)
 public class Employee { //クラス名 = テーブル名の単数形(慣例)
@@ -38,7 +38,7 @@ public class Employee { //クラス名 = テーブル名の単数形(慣例)
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "passwoard", nullable = false, length = 64)
+    @Column(name = "password", nullable = false, length = 64)
     private String password;
 
     @Column(name = "admin_flg", nullable = false)
@@ -50,8 +50,8 @@ public class Employee { //クラス名 = テーブル名の単数形(慣例)
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name = "delete_flg", nullable = false)
-    private Integer delete_flg;
+    @Column(name = "delete_flag", nullable = false)
+    private Integer delete_flag;
 
     // 以下セッター・ゲッター
     public Integer getId() {
@@ -110,12 +110,12 @@ public class Employee { //クラス名 = テーブル名の単数形(慣例)
         this.updated_at = updated_at;
     }
 
-    public Integer getDelete_flg() {
-        return delete_flg;
+    public Integer getDelete_flag() {
+        return delete_flag;
     }
 
-    public void setDelete_flg(Integer delete_flg) {
-        this.delete_flg = delete_flg;
+    public void setDelete_flag(Integer delete_flag) {
+        this.delete_flag = delete_flag;
     }
 
 }
