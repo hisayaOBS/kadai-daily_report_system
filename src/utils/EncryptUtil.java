@@ -7,7 +7,8 @@ import javax.xml.bind.DatatypeConverter;
 
 //SHA256ハッシュ化クラス
 public class EncryptUtil {
-
+    // 引数はパスワード文字列とペッパー文字列
+    // ペッパー文字列については、リスナーでアプリケーションスコープに'pepper'として格納してある。
     public static String getPasswordEncrypt(String plain_p, String pepper) {
         String ret = "";
 

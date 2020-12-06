@@ -17,7 +17,7 @@ import javax.servlet.annotation.WebListener;
  *
  */
 
-//このリスナーは、アプリケーションスコープに、ペッパー文字列もセットする。(アプリケーション起動時に実行)
+//このリスナーは、アプリケーションスコープに、ペッパー文字列もセットする。(Webコンテナ起動時に実行)
 
 @WebListener
 public class PropertiesListener implements ServletContextListener {

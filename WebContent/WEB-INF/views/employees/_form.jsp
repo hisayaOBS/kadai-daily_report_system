@@ -5,7 +5,7 @@
     <div id="flush_error">
         入力内容にエラーがあります。<br />
         <c:forEach var="error" items="${errors}">
-            ・
+            ・<c:out value="${error}" /><br />
         </c:forEach>
     </div>
 </c:if>
@@ -25,9 +25,9 @@
 <br /><br />
 
 <label for="admin_flag">権限</label><br />
-<select name="admin_flg" id="">
-    <option value="0" <c:if test="${$employee.admin_flg == 0}">selected</c:if> >一般</option>
-    <option value="0" <c:if test="${$employee.admin_flg == 1}">selected</c:if> >管理者</option>
+<select name="admin_flag">
+    <option value="0" <c:if test="${$employee.admin_flag == 0}">selected</c:if> >一般</option>
+    <option value="0" <c:if test="${$employee.admin_flag == 1}">selected</c:if> >管理者</option>
 </select>
 <br /><br />
 

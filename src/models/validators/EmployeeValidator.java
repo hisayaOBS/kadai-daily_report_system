@@ -18,13 +18,13 @@ public class EmployeeValidator {
         String name_error = validateName(e.getName());
         String pass_error = validatePass(e.getPassword(), passwordCheckFlag);
 
-        if (code_error.equals("")) {
+        if (!code_error.equals("")) {
             errors.add(code_error);
         }
-        if (name_error.equals("")) {
+        if (!name_error.equals("")) {
             errors.add(name_error);
         }
-        if (pass_error.equals("")) {
+        if (!pass_error.equals("")) {
             errors.add(pass_error);
         }
 
@@ -44,8 +44,7 @@ public class EmployeeValidator {
             EntityManager em = DBUtil.createEntityManager();
             // このキャストはラッパークラス(参照型)のLongからプリミティブ型のlongに変換している。
             long employees_count = (long) em.createNamedQuery("checkRegisteredCode", Long.class)
-                    .setParameter("code", code)
-                    .setParameter("codoe", code).getSingleResult();
+                    .setParameter("code", code).getSingleResult();
 
             em.close();
             if (employees_count > 0) {
@@ -68,12 +67,9 @@ public class EmployeeValidator {
 
     // 「新規登録」「パスワード変更」のみ実行
     private static String validatePass(String password, Boolean passwordCheckFlag) {
-        if (passwordCheckFlag) {
-            if (password == null || passwordCheckFlag.equals("")) {
-                return "パスワードを入力してください。";
-            }
+        if (passwordCheckFlag && (password == null || password.equals(""))) {
+            return "パスワードを入力してください。";
         }
-
         return "";
     }
 

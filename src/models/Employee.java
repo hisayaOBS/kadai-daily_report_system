@@ -41,8 +41,8 @@ public class Employee { //クラス名 = テーブル名の単数形(慣例)
     @Column(name = "password", nullable = false, length = 64)
     private String password;
 
-    @Column(name = "admin_flg", nullable = false)
-    private Integer admin_flg;
+    @Column(name = "admin_flag", nullable = false)
+    private Integer admin_flag;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -86,12 +86,12 @@ public class Employee { //クラス名 = テーブル名の単数形(慣例)
         this.password = password;
     }
 
-    public Integer getAdmin_flg() {
-        return admin_flg;
+    public Integer getAdmin_flag() {
+        return admin_flag;
     }
 
-    public void setAdmin_flg(Integer admin_flg) {
-        this.admin_flg = admin_flg;
+    public void setAdmin_flag(Integer admin_flag) {
+        this.admin_flag = admin_flag;
     }
 
     public Timestamp getCreated_at() {
