@@ -38,10 +38,11 @@
                 </table>
 
                 <p><a href="<c:url value='/employees/edit?id=${employee.id}' />">編集・削除</a></p>
-                <p><a href="<c:url value='/employees/index' />">一覧へ戻る</a></p>
             </c:when>
             <c:otherwise>
+            <h2>お探しのデータは見つかりませんでした。</h2>
             </c:otherwise>
         </c:choose>
+        <p><a href="<c:url value='/employees/index' />">一覧へ戻る</a></p>
     </c:param>
 </c:import>
