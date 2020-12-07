@@ -17,6 +17,10 @@ body {
     padding-left: 3%;
 }
 
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 h1 {
     width: 94%;
     padding-top: 17px;
@@ -30,10 +34,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-li {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 p {
     margin-top: 15px;
@@ -112,4 +112,34 @@ tr.row0 {
 select {
     height: 30px;
 }
+#header_menu {
+    width: 57%;
+    padding-top: 17px;
+    padding-left: 3%;
+    display: inline-block;
+}
 
+#employee_name {
+    color: #cccccc;
+    width: 36%;
+    padding-right: 3%;
+    text-align: right;
+    display: inline-block;
+}
+
+#header a {
+    color: #eeeeee;
+}
+
+h1 a {
+    color: #eeeeee;
+}
+
+/* ...（中略）... */
+
+h1 {
+    font-size: 24px;
+    display: inline;
+}
+
+/* ...（中略）... */
