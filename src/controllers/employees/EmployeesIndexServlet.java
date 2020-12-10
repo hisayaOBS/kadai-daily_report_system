@@ -49,8 +49,8 @@ public class EmployeesIndexServlet extends HttpServlet {
         //従業員レコードを全件取得(ページネイトにより1ページN件分)
         //型指定による、クエリを取得
         TypedQuery<Employee> select_all_query = em.createNamedQuery("getAllEmployees", Employee.class);
-        select_all_query = select_all_query.setFirstResult(5 * (page - 1)); //レコード取得を開始する位置を指定するクエリをセット
-        select_all_query = select_all_query.setMaxResults(5); //開始位置から何件レコードを取得するか指定するクエリをセット
+        select_all_query = select_all_query.setFirstResult(15 * (page - 1)); //レコード取得を開始する位置を指定するクエリをセット
+        select_all_query = select_all_query.setMaxResults(15); //開始位置から何件レコードを取得するか指定するクエリをセット
         //クエリを実行、取得レコードが複数の可能性があるため結果をListで取得
         List<Employee> employees = select_all_query.getResultList();
 
