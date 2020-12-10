@@ -118,7 +118,6 @@ public class LoginServlet extends HttpServlet {
 
             //トップページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/");
-            System.out.println("リダイレクトごに出力できるか");
         }
 
     }
